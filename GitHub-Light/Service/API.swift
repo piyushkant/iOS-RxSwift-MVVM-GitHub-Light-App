@@ -47,7 +47,7 @@ enum APIEndpoint: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
         let url = try Constants.baseUrl.asURL()
         
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.method = method
         
         return try URLEncoding.default.encode(urlRequest, with: parameters)
@@ -97,13 +97,13 @@ class API: APIProtocol {
         return Observable.create { observer in
             
             let request = AF.request(urlRequestConvertible)
-            
-            print("urlRequestConvertible", urlRequestConvertible)
-            
+                        
             request.responseJSON { response in
                 guard let data = response.data else {
                     return observer.onError(APIError.connectionError)
                 }
+                
+                print(data)
 
                 if let obj = try? JSONDecoder().decode(T.self, from: data) {
                     observer.onNext(obj)

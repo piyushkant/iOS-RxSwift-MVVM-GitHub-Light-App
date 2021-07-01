@@ -10,4 +10,6 @@ import UIKit
 struct AppConfig {
     static let appName = "GitHub-Light"
     static let appThemeColor = UIColor.systemGreen
+    static let query = "piyushkant"
+    static let perPage = 10
 }
