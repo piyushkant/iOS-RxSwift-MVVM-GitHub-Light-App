@@ -11,8 +11,8 @@ import RxCocoa
 import SnapKit
 
 class UserListViewController: UIViewController {
-    let disposeBag = DisposeBag()
-    var viewModel: UsersViewModelProtocol!
+    private let disposeBag = DisposeBag()
+    private var viewModel: UsersViewModelProtocol!
     
     var totalScoreLabel: UILabel = {
         let label = UILabel()

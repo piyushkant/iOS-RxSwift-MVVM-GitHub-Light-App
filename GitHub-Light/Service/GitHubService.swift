@@ -37,7 +37,7 @@ class GitHubService: GitHubServiceProtocol {
                 let repos = response.compactMap {
                     return $0
                 }
-                
+                                
                 return repos.sorted()
             }
     }
