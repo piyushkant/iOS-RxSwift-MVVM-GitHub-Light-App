@@ -103,8 +103,6 @@ class API: APIProtocol {
                     return observer.onError(APIError.connectionError)
                 }
                 
-                print(data)
-
                 if let obj = try? JSONDecoder().decode(T.self, from: data) {
                     observer.onNext(obj)
                     observer.onCompleted()

@@ -31,6 +31,8 @@
 		4BA712B4268DB69500AC809E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712B3268DB69500AC809E /* BaseTableViewCell.swift */; };
 		4BA712B6268DB90F00AC809E /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712B5268DB90F00AC809E /* UsersViewModel.swift */; };
 		4BA712B8268DC32B00AC809E /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712B7268DC32B00AC809E /* UserCell.swift */; };
+		4BA712BA268DEB3900AC809E /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712B9268DEB3900AC809E /* RepoListViewModel.swift */; };
+		4BA712BC268DF1F600AC809E /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712BB268DF1F600AC809E /* RepoCell.swift */; };
 		AB32DC7DDD95775D456C1BC7 /* Pods_GitHub_LightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF54D76319458ACE39A60BF5 /* Pods_GitHub_LightTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		4BA712B3268DB69500AC809E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		4BA712B5268DB90F00AC809E /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		4BA712B7268DC32B00AC809E /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		4BA712B9268DEB3900AC809E /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		4BA712BB268DF1F600AC809E /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		839B421590D167315EB177EC /* Pods-GitHub-LightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-LightTests.release.xcconfig"; path = "Target Support Files/Pods-GitHub-LightTests/Pods-GitHub-LightTests.release.xcconfig"; sourceTree = "<group>"; };
 		BFB9B7BA34F247BD3E91CC9B /* Pods_GitHub_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Light.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54D76319458ACE39A60BF5 /* Pods_GitHub_LightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_LightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +224,7 @@
 			children = (
 				4BA712B3268DB69500AC809E /* BaseTableViewCell.swift */,
 				4BA712B7268DC32B00AC809E /* UserCell.swift */,
+				4BA712BB268DF1F600AC809E /* RepoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				4BA712B5268DB90F00AC809E /* UsersViewModel.swift */,
+				4BA712B9268DEB3900AC809E /* RepoListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				4BA712A3268D943200AC809E /* Int+Ex.swift in Sources */,
 				4BA712A4268D943200AC809E /* String+Ex.swift in Sources */,
 				4BA712B8268DC32B00AC809E /* UserCell.swift in Sources */,
+				4BA712BC268DF1F600AC809E /* RepoCell.swift in Sources */,
 				4BA712AC268D999600AC809E /* Users.swift in Sources */,
 				4BA712B2268DAEE100AC809E /* Repo.swift in Sources */,
 				4BA712A2268D943200AC809E /* UIColor+Ex.swift in Sources */,
@@ -452,6 +459,7 @@
 				4BA712A0268D943200AC809E /* UIViewController+Ex.swift in Sources */,
 				4BA7125D268D8BCD00AC809E /* AppDelegate.swift in Sources */,
 				4BA712A6268D943200AC809E /* UILabel+Ex.swift in Sources */,
+				4BA712BA268DEB3900AC809E /* RepoListViewModel.swift in Sources */,
 				4BA7125F268D8BCD00AC809E /* SceneDelegate.swift in Sources */,
 				4BA71296268D91A900AC809E /* UserListViewController.swift in Sources */,
 				4BA712A8268D96BD00AC809E /* Constant.swift in Sources */,
