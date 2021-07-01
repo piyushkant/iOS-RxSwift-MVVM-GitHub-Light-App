@@ -27,6 +27,7 @@
 		4BA712AC268D999600AC809E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712AB268D999600AC809E /* Users.swift */; };
 		4BA712AE268D99D900AC809E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712AD268D99D900AC809E /* API.swift */; };
 		4BA712B0268DA6F000AC809E /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712AF268DA6F000AC809E /* GitHubService.swift */; };
+		4BA712B2268DAEE100AC809E /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA712B1268DAEE100AC809E /* Repo.swift */; };
 		AB32DC7DDD95775D456C1BC7 /* Pods_GitHub_LightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF54D76319458ACE39A60BF5 /* Pods_GitHub_LightTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		4BA712AB268D999600AC809E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		4BA712AD268D99D900AC809E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4BA712AF268DA6F000AC809E /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		4BA712B1268DAEE100AC809E /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		839B421590D167315EB177EC /* Pods-GitHub-LightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-LightTests.release.xcconfig"; path = "Target Support Files/Pods-GitHub-LightTests/Pods-GitHub-LightTests.release.xcconfig"; sourceTree = "<group>"; };
 		BFB9B7BA34F247BD3E91CC9B /* Pods_GitHub_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Light.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54D76319458ACE39A60BF5 /* Pods_GitHub_LightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_LightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 			children = (
 				4BA712A9268D981300AC809E /* User.swift */,
 				4BA712AB268D999600AC809E /* Users.swift */,
+				4BA712B1268DAEE100AC809E /* Repo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				4BA712A3268D943200AC809E /* Int+Ex.swift in Sources */,
 				4BA712A4268D943200AC809E /* String+Ex.swift in Sources */,
 				4BA712AC268D999600AC809E /* Users.swift in Sources */,
+				4BA712B2268DAEE100AC809E /* Repo.swift in Sources */,
 				4BA712A2268D943200AC809E /* UIColor+Ex.swift in Sources */,
 				4BA712B0268DA6F000AC809E /* GitHubService.swift in Sources */,
 				4BA712A0268D943200AC809E /* UIViewController+Ex.swift in Sources */,

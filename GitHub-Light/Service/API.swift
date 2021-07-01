@@ -75,6 +75,7 @@ enum APIError: Error {
 
 protocol APIProtocol {
     func getUsers(query: String, perPage: Int) -> Observable<Users>
+    func getRepos(username: String) -> Observable<[Repo]> 
 }
 
 //MARK: - API Networking
@@ -88,10 +89,16 @@ class API: APIProtocol {
         request(urlRequestConvertible: APIEndpoint.users(query, perPage))
     }
     
+    func getRepos(username: String) -> Observable<[Repo]> {
+        request(urlRequestConvertible: APIEndpoint.repos(username))
+    }
+    
     private func request<T>(urlRequestConvertible: URLRequestConvertible) -> Observable<T> where T: Decodable {
         return Observable.create { observer in
             
             let request = AF.request(urlRequestConvertible)
+            
+            print("urlRequestConvertible", urlRequestConvertible)
             
             request.responseJSON { response in
                 guard let data = response.data else {

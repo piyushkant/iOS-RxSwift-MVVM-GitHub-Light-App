@@ -8,7 +8,6 @@
 import Foundation
 
 struct User: Decodable {
-    
     var id: Int = 0
     var username: String = ""
     
@@ -19,7 +18,6 @@ struct User: Decodable {
 }
 
 extension User: Comparable {
-    
     static func == (lhs: User, rhs: User) -> Bool {
         lhs.id == rhs.id
     }

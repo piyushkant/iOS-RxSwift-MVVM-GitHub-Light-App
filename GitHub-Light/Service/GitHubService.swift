@@ -9,10 +9,11 @@ import RxSwift
 
 protocol GitHubServiceProtocol {
     func fetchUsers(query: String, perPage: Int) -> Observable<[User]>
+    func fetchRepos(username: String) -> Observable<[Repo]>
 }
 
 class GitHubService: GitHubServiceProtocol {
-    
+
     let API: APIProtocol
     
     init(API: APIProtocol) {
@@ -27,6 +28,17 @@ class GitHubService: GitHubServiceProtocol {
                 }
                 
                 return users.sorted()
+            }
+    }
+    
+    func fetchRepos(username: String) -> Observable<[Repo]> {
+        return API.getRepos(username: username)
+            .map { response in
+                let repos = response.compactMap {
+                    return $0
+                }
+                
+                return repos.sorted()
             }
     }
 }
