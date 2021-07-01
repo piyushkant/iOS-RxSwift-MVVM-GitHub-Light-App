@@ -24,9 +24,9 @@ extension UIViewController {
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
     }
     
-//    func showErrorAlert(_ error: APIError) {
-//        self.showAlert(title: "Error", message: error.message, actions: [UIAlertAction(title: "OK", style: .default)])
-//    }
+    func showErrorAlert(_ error: APIError) {
+        self.showAlert(title: "Error", message: error.message, actions: [UIAlertAction(title: "OK", style: .default)])
+    }
     
     func showAlert(title: String?, message: String?,actions: [UIAlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
