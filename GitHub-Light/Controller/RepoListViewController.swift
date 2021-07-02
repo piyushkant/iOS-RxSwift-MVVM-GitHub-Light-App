@@ -14,6 +14,8 @@ class RepoListViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var viewModel: RepoListViewModelProtocol!
     
+    private let searchController = UISearchController()
+    
     private var usernameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
@@ -57,10 +59,18 @@ class RepoListViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        setupSearchController()
         setupNameLabel()
         setupIdLabel()
         setupScoreLabel()
         setupTableView()
+    }
+    
+    private func setupSearchController() {
+        searchController.searchBar.placeholder = "Search Repos"
+        searchController.searchBar.tintColor = .white
+        searchController.obscuresBackgroundDuringPresentation = true
+        navigationItem.searchController = searchController
     }
     
     private func setupNameLabel() {
@@ -114,6 +124,18 @@ class RepoListViewController: UIViewController {
     }
     
     private func bind() {
+        
+        // MARK: - Inputs
+        searchController.searchBar.rx.text
+            .orEmpty
+            .bind(to: viewModel.filterKey)
+            .disposed(by: disposeBag)
+        
+        searchController.searchBar.rx.cancelButtonClicked
+            .bind(to: viewModel.cancelButtonTapped)
+            .disposed(by: disposeBag)
+        
+        // MARK: - Outputs
         viewModel.repos
             .bind(to: tableView.rx.items(cellIdentifier: RepoCell.reuseIdentifier, cellType: RepoCell.self)) { (_, repo, cell) in
                 cell.selectionStyle = .none

@@ -13,7 +13,7 @@ import SnapKit
 class UserListViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var viewModel: UsersViewModelProtocol!
-    
+        
     var totalScoreLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -71,6 +71,8 @@ class UserListViewController: UIViewController {
     }
     
     private func bind() {
+        
+        // MARK: - Outputs
         viewModel.totalScore
             .map { "Total score: \($0)" }
             .bind(to: totalScoreLabel.rx.text)
@@ -92,6 +94,13 @@ class UserListViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        viewModel.usersError
+            .subscribe ( onNext: { [weak self] error in
+                guard let self = self else { return }
+                self.showErrorAlert(error)
+            })
+            .disposed(by: disposeBag)
+        
         tableView.rx.modelSelected(User.self)
             .subscribe(onNext: { [weak self] user in
                 guard let self = self else { return }
@@ -99,13 +108,6 @@ class UserListViewController: UIViewController {
                 let repoListVC = RepoListViewController()
                 repoListVC.user = user
                 self.navigationController?.pushViewController(repoListVC, animated: true)
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.usersError
-            .subscribe ( onNext: { [weak self] error in
-                guard let self = self else { return }
-                self.showErrorAlert(error)
             })
             .disposed(by: disposeBag)
     }

@@ -24,6 +24,6 @@ extension Repo: Comparable {
         lhs.id == rhs.id
     }
     static func < (lhs: Repo, rhs: Repo) -> Bool {
-        lhs.id < rhs.id
+        rhs.id < lhs.id
     }
 }
