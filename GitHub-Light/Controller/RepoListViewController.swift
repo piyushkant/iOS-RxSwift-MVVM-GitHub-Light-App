@@ -24,20 +24,30 @@ class RepoListViewController: UIViewController {
         return label
     }()
     
-    private var idLabel: UILabel = {
+    private lazy var idLabel: UILabel = {
         let label = UILabel()
+        label.text = "ID: \(user.id)"
         label.textColor = .gray
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 15)
         return label
     }()
     
-    private var scoreLabel: UILabel = {
+    private lazy var scoreLabel: UILabel = {
         let label = UILabel()
+        label.text = "Score: \(user.score)"
         label.textColor = .gray
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 15)
         return label
+    }()
+    
+    private lazy var infoStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [idLabel, scoreLabel])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 1
+        return stackView
     }()
     
     private let tableView = UITableView()
@@ -61,8 +71,7 @@ class RepoListViewController: UIViewController {
         view.backgroundColor = .white
         setupSearchController()
         setupNameLabel()
-        setupIdLabel()
-        setupScoreLabel()
+        setupInfoStackView()
         setupTableView()
     }
     
@@ -85,34 +94,20 @@ class RepoListViewController: UIViewController {
         usernameLabel.text = user?.username
     }
     
-    private func setupIdLabel() {
-        view.addSubview(idLabel)
-        idLabel.snp.makeConstraints {
+    private func setupInfoStackView() {
+        view.addSubview(infoStackView)
+        infoStackView.snp.makeConstraints {
             $0.top.equalTo(usernameLabel.snp.bottom)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
             $0.height.equalTo(view.frame.height/20)
         }
-        
-        idLabel.text = "ID: \(user.id)"
-    }
-    
-    private func setupScoreLabel() {
-        view.addSubview(scoreLabel)
-        scoreLabel.snp.makeConstraints {
-            $0.top.equalTo(idLabel.snp.bottom)
-            $0.leading.equalTo(view.snp.leading)
-            $0.trailing.equalTo(view.snp.trailing)
-            $0.height.equalTo(view.frame.height/20)
-        }
-        
-        scoreLabel.text = "Score: \(user.score)"
     }
     
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
-            $0.top.equalTo(scoreLabel.snp.bottom)
+            $0.top.equalTo(infoStackView.snp.bottom)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
             $0.bottom.equalTo(view.snp.bottom)
